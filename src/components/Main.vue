@@ -69,6 +69,7 @@ export default {
             display: flex;
             justify-content: center;
             align-items: center;
+            gap: 8px;
             li {
                 flex-basis: calc(100% / 5);
                 display: flex;

@@ -1,2 +1,8 @@
 @import "./parzials/variables";
 @import "./parzials/commons";
+
+a {
+    text-decoration: none;
+    color: inherit;
+    font-family: inherit;
+}
