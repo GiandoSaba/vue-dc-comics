@@ -169,7 +169,6 @@ export default {
                     ul {
                         list-style: none;
                         li a {
-                            text-decoration: none;
                             color: grey;
                             line-height: 2em;
                         }
@@ -197,7 +196,6 @@ export default {
                 a {
                     padding: 0.8em;
                     border: 2px solid $brand-font-color;
-                    text-decoration: none;
                     color: white;
                 }
             }
@@ -210,7 +208,6 @@ export default {
                     align-items: center;
                     gap: 2em;
                     a {
-                        text-decoration: none;
                         text-transform: uppercase;
                         font-size: 1.5em;
                         color: $brand-font-color;

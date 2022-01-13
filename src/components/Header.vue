@@ -78,11 +78,9 @@ export default {
                     height: 100%;
                     line-height: $header-height;
                     a {
-                        text-decoration: none;
                         text-transform: uppercase;
                         font-weight: bold;
                         font-size: 0.8em;
-                        color: black;
                         padding: 1em;
                     }
                     &.active {
@@ -98,7 +96,6 @@ export default {
                         }
                         a {
                             color: $brand-font-color;
-    
                         }
                     }
     

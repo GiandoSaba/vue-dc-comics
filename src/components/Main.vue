@@ -80,9 +80,7 @@ export default {
                     margin-right: 1em;
                 }
                 a {
-                    text-decoration: none;
                     text-transform: uppercase;
-                    color: inherit;
                 }
             }
 
