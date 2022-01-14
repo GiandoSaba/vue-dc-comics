@@ -2,46 +2,57 @@
   <section class="card-section">
     <div class="container">
       <ul>
-        <li>
-          <img
-            src="../assets/img/buy-comics-digital-comics.png"
-            alt="Digital-Comics"
-          />
-          <a href="#">Digital Comics</a>
-        </li>
-        <li>
-          <img
-            src="../assets/img/buy-comics-merchandise.png"
-            alt="Digital-Comics"
-          />
-          <a href="#">DC Merchandise</a>
-        </li>
-        <li>
-          <img
-            src="../assets/img/buy-comics-subscriptions.png"
-            alt="Digital-Comics"
-          />
-          <a href="#">Subscriptions</a>
-        </li>
-        <li>
-          <img
-            src="../assets/img/buy-comics-shop-locator.png"
-            alt="Digital-Comics"
-          />
-          <a href="#">Comic Shop Locator</a>
-        </li>
-        <li>
-          <img src="../assets/img/buy-dc-power-visa.svg" alt="Digital-Comics" />
-          <a href="#">DC Power Visa</a>
-        </li>
+        <CardItem 
+        v-for="(card, index) in cards"
+        :key="index"
+        :title="card.title"
+        :url="card.url"
+        :imgUrl="card.img"
+        />
       </ul>
     </div>
   </section>
 </template>
 
 <script>
+import CardItem from './CardItem.vue';
+
 export default {
   name: "FooterCard",
+  components: {
+    CardItem,
+  },
+  data() {
+    return {
+      cards: [
+        {
+          title: "Digital Comics",
+          url: "#",
+          img: require("../assets/img/buy-comics-digital-comics.png")
+        },
+        {
+          title: "DC Merchandise",
+          url: "#",
+          img: require("../assets/img/buy-comics-merchandise.png")
+        },
+        {
+          title: "Subscriptions",
+          url: "#",
+          img: require("../assets/img/buy-comics-subscriptions.png")
+        },
+        {
+          title: "Comic Shop Locator",
+          url: "#",
+          img: require("../assets/img/buy-comics-shop-locator.png")
+        },
+        {
+          title: "DC Power Visa",
+          url: "#",
+          img: require("../assets/img/buy-dc-power-visa.svg")
+        },
+      ],
+    }
+  },
 };
 </script>
 
@@ -53,18 +64,7 @@ export default {
   padding: 2.5em;
   ul {
     @include flex(center, center);
-    gap: 8px;
-    li {
-      @include flex(center, center);
-      flex-basis: calc(100% / 5);
-      img {
-        height: 50px;
-        margin-right: 1em;
-      }
-      a {
-        text-transform: uppercase;
-      }
-    }
+    gap: 1em;
   }
 }
 </style>
