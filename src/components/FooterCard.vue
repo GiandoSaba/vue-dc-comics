@@ -46,22 +46,17 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import "../assets/scss/parzials/_variables";
+@import "../assets/scss/style.scss";
 
 .card-section {
   background-color: $brand-font-color;
   padding: 2.5em;
   ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex(center, center);
     gap: 8px;
     li {
+      @include flex(center, center);
       flex-basis: calc(100% / 5);
-      display: flex;
-      align-items: center;
-      justify-content: center;
       img {
         height: 50px;
         margin-right: 1em;

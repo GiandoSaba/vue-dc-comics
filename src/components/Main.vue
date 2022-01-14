@@ -125,7 +125,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import "../assets/scss/parzials/_variables";
+@import "../assets/scss/style.scss";
+
 .banner {
   background-color: $brand-font-color;
   color: white;
@@ -145,15 +146,13 @@ export default {
   }
 }
 .series {
-  padding: 3em 0;
+  padding: 4em 0;
   background-color: #1C1C1C;
   .container {
     text-align: center;
     .thumbs {
-      list-style: none;
-      display: flex;
+      @include flex(center, stretch);
       flex-wrap: wrap;
-      justify-content: center;
       gap: 1em;
       margin-bottom: 2em;
     }

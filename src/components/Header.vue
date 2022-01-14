@@ -4,59 +4,91 @@
       <div class="logo">
         <img src="../assets/img/dc-logo.png" />
       </div>
-      <div class="header-menu">
-        <ul>
-          <li>
-            <a href="#">Character</a>
-          </li>
-          <li class="active">
-            <a href="#">Comics</a>
-          </li>
-          <li>
-            <a href="#">Movies</a>
-          </li>
-          <li>
-            <a href="#">Tv</a>
-          </li>
-          <li>
-            <a href="#">Games</a>
-          </li>
-          <li>
-            <a href="#">Collectibles</a>
-          </li>
-          <li>
-            <a href="#">Videos</a>
-          </li>
-          <li>
-            <a href="#">Fans</a>
-          </li>
-          <li>
-            <a href="#">News</a>
-          </li>
-          <li>
-            <a href="#">Shop</a>
-          </li>
-        </ul>
-      </div>
+      <ul class="menu-inline">
+        <MenuInlineItem 
+        v-for="(link, index) in links_menu"
+        :key="index"
+        :title="link.title"
+        :url="link.url"
+        :active="link.current"
+        />
+      </ul>
     </div>
   </header>
 </template>
 
 <script>
+import MenuInlineItem from './MenuInlineItem.vue';
+
 export default {
   name: "Header",
+  components: {
+    MenuInlineItem,
+  },
   data() {
-    return {};
+    return {
+      links_menu: [
+        {
+          title: "Character",
+          url: "#",
+          current: false
+        },
+        {
+          title: "Comics",
+          url: "#",
+          current: true
+        },
+        {
+          title: "Movies",
+          url: "#",
+          current: false
+        },
+        {
+          title: "Tv",
+          url: "#",
+          current: false
+        },
+        {
+          title: "Games",
+          url: "#",
+          current: false
+        },
+        {
+          title: "Collectibles",
+          url: "#",
+          current: false
+        },
+        {
+          title: "Videos",
+          url: "#",
+          current: false
+        },
+        {
+          title: "Fans",
+          url: "#",
+          current: false
+        },
+        {
+          title: "News",
+          url: "#",
+          current: false
+        },
+        {
+          title: "Shop",
+          url: "#",
+          current: false
+        },
+      ]
+    };
   },
 };
 </script>
 
 <style scoped lang="scss">
-@import "../assets/scss/parzials/_variables";
+@import "../assets/scss/style.scss";
 
 .container {
-  display: flex;
-  align-items: center;
+  @include flex(center,center);
   height: $header-height;
   .logo {
     flex-basis: 30%;
@@ -64,39 +96,9 @@ export default {
       width: 70px;
     }
   }
-  .header-menu {
+  .menu-inline{
+    @include flex(center,center);
     height: 100%;
-    ul {
-      list-style: none;
-      display: flex;
-      flex-wrap: nowrap;
-      height: 100%;
-      li {
-        height: 100%;
-        line-height: $header-height;
-        a {
-          text-transform: uppercase;
-          font-weight: bold;
-          font-size: 0.8em;
-          padding: 1em;
-        }
-        &.active {
-          position: relative;
-          &::after {
-            content: "";
-            width: 100%;
-            height: 3px;
-            background-color: $brand-font-color;
-            position: absolute;
-            top: 98%;
-            left: 0;
-          }
-          a {
-            color: $brand-font-color;
-          }
-        }
-      }
-    }
   }
 }
 </style>

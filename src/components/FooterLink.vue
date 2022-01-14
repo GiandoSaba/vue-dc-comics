@@ -110,13 +110,12 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import "../assets/scss/style.scss";
 .footer-top {
   background-image: url("../assets/img/footer-bg.jpg");
   background-repeat: repeat-x;
   .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flex(space-between, center);
     .footer-menu {
       display: flex;
       flex-wrap: wrap;

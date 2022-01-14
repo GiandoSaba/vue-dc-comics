@@ -37,15 +37,13 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import "../assets/scss/parzials/_variables";
+@import "../assets/scss/style.scss";
 
 .footer-bot {
   background-color: #303030;
   padding: 2em 0;
   .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flex(space-between,center);
     .sign-up {
       width: 50%;
       a {
@@ -57,10 +55,7 @@ export default {
     .social-link {
       width: 50%;
       ul {
-        list-style: none;
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
+        @include flex(flex-end,center);
         gap: 2em;
         a {
           text-transform: uppercase;
