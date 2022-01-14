@@ -5,12 +5,13 @@
         <img src="../assets/img/dc-logo.png" />
       </div>
       <ul class="menu-inline">
-        <MenuInlineItem 
+        <MenuInlineItem
         v-for="(link, index) in links_menu"
-        :key="index"
+        :key="index" 
         :title="link.title"
         :url="link.url"
         :active="link.current"
+        @my-event="changeActive(index)"
         />
       </ul>
     </div>
@@ -81,7 +82,20 @@ export default {
       ]
     };
   },
+  methods: {
+    changeActive: function(index) {
+      this.links_menu.forEach((element,indexElement) => {
+        if (index == indexElement) {
+          element.current = true;
+        } else {
+          element.current = false;
+        }
+      });
+    }
+  }
 };
+
+
 </script>
 
 <style scoped lang="scss">

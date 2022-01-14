@@ -1,5 +1,5 @@
 <template>
-  <li :class="(active) ? 'active' : ''">
+  <li @click="$emit('my-event')" :class="(active) ? 'active' : ''">
     <a :href="url">{{ title }}</a>
   </li>
 </template>
