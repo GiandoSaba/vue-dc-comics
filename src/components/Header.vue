@@ -64,7 +64,7 @@ export default {
         .logo {
             flex-basis: 30%;
             img {
-                padding: 1em;
+                width: 70px;
             }
         }
         .header-menu {

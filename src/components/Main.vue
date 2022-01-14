@@ -63,7 +63,7 @@ export default {
     }
     .card-section {
         background-color: $brand-font-color;
-        padding: 4em;
+        padding: 2.5em;
         ul {
             list-style: none;
             display: flex;
